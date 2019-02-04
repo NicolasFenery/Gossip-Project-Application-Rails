@@ -1,0 +1,13 @@
+<h1>Gossip#card</h1>
+<p>Find me in app/views/gossip/card.html.erb</p>
+
+<ul>
+	<li>Title : <%= @gossip_card.title %> </li>
+	<li>Author : <%= @gossip_card.user.first_name %> </li>
+
+	<% @users %>
+	<li><%= link_to "Clique Ici", user_path(user.id) %> </li>
+	<li>Description : <%= @gossip_card.content %> </li>
+	<li>Date : <%= @gossip_card.date %> </li> </br>
+</ul>
+
