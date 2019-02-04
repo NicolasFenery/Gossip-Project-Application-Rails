@@ -1,18 +1,20 @@
+<div class="mx-auto text-center">
 <div class="jumbotron">
   <h1 class="display-4">The Gossip Project</h1>
-  <p class="lead">Bienvenue, check les secrets les plus tendance de ta région.</p>
+  <p class="lead">Check les secrets les plus tendances de ta région</p>
+</div>
 </div>
 
 <% @gossips.each do |gossip| %>
 
 <div class="container">
-	<div class="row my-3">
-		<div class="col-sm">
+	<div class="card-deck mb-3 text-center">
+		<div class="col-sm-3">
 			<div class="card border border-primary" style="width: 18rem;">
 			  <div class="card-body">
-			    <h5 class="card-title"><%= gossip.title %></h5>
-			    <h6 class="card-subtitle mb-2 text-muted"><%= gossip.user.first_name %></h6>
-			    <p class="card-text"><%= link_to "Clique Ici pour voir le Secret", gossip_path(gossip.id) %></p>
+			    <h5 class="card-title mb-3"><%= gossip.title %></h5>
+			    <h6 class="card-subtitle mb-5 text-muted"><%= gossip.user.first_name %></h6>
+			    <button type="button" class="btn btn-lg btn-outline-primary"><%= link_to "Voir le Secret", gossip_path(gossip.id) %></button>
 			  </div>
 			</div>
 		</div>
