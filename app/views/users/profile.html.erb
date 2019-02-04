@@ -1,2 +1,34 @@
-<h1>Users#profile</h1>
-<p>Find me in app/views/users/profile.html.erb</p>
+<div class="mx-auto py-3" style="width: 600px;">
+<h1>Profil Utilisateur</h1>
+</div>
+
+<div class="mx-auto py-3" style="width: 600px;">
+<table class="table">
+  <tbody>
+    <tr>
+      <th scope="row">Prénom</th>
+      <td><%= @user_profile.first_name %></td>
+    </tr>
+    <tr>
+      <th scope="row">Nom</th>
+      <td><%= @user_profile.last_name %></td>
+    </tr>
+    <tr>
+      <th scope="row">Description</th>
+      <td><%= @user_profile.description %></td>
+    </tr>
+     <tr>
+      <th scope="row">Mail</th>
+      <td><%= @user_profile.email %></td>
+    </tr>
+     <tr>
+      <th scope="row">Age</th>
+      <td><%= @user_profile.age %></td>
+    </tr>
+     <tr>
+      <th scope="row">Ville</th>
+      <td><%= @user_profile.city.name %></td>
+    </tr>
+  </tbody>
+</table>
+</div>

@@ -1,13 +1,26 @@
-<h1>Gossip#card</h1>
-<p>Find me in app/views/gossip/card.html.erb</p>
+<div class="mx-auto py-3" style="width: 600px;">
+<h1>Gossip</h1>
+</div>
 
-<ul>
-	<li>Title : <%= @gossip_card.title %> </li>
-	<li>Author : <%= @gossip_card.user.first_name %> </li>
-
-	<% @users %>
-	<li><%= link_to "Clique Ici", user_path(user.id) %> </li>
-	<li>Description : <%= @gossip_card.content %> </li>
-	<li>Date : <%= @gossip_card.date %> </li> </br>
-</ul>
-
+<div class="mx-auto py-3" style="width: 600px;">
+<table class="table">
+  <tbody>
+    <tr>
+      <th scope="row">Gossip</th>
+      <td><%= @gossip_card.title %></td>
+    </tr>
+    <tr>
+      <th scope="row">Auteur</th>
+      <td><%= link_to "#{@gossip_card.user.first_name}", user_path(@gossip_card.user.id) %></td>
+    </tr>
+    <tr>
+      <th scope="row">Description</th>
+      <td><%= @gossip_card.content %></td>
+    </tr>
+     <tr>
+      <th scope="row">Date</th>
+      <td><%= @gossip_card.date %> </li></td>
+    </tr>
+  </tbody>
+</table>
+</div>
