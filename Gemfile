@@ -5,8 +5,12 @@ ruby '2.5.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.2'
+
+group :production do
 # Use postgresql as the database for Active Record
-gem 'pg', '>= 0.18', '< 2.0'
+  gem 'pg', '>= 0.18', '< 2.0'
+  gem 'faker'
+end
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
@@ -41,7 +45,6 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'rspec-rails'
   gem 'factory_bot_rails'
-  gem 'faker'
 end
 
 group :development do
