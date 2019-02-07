@@ -1,14 +1,8 @@
 # Gossip Project
-App Rails en MVC
-
-## Lancer l'app
-- rails db:migrate
-- bundle install
-- rails db:seed
-- rails server
+App The Gossip Project
 
 ## Regarde ensuite les pages du site en commençant par la page d'accueil :
-http://localhost:3000/
+https://gossipswagance.herokuapp.com
 
 ## Réalisé par :fire:
 Nicolas & Manon
