@@ -12,6 +12,7 @@ City.destroy_all
 Tag.destroy_all
 Gossip.destroy_all
 PrivateMessage.destroy_all
+Comment.destroy_all
 
 10.times do
   city = City.create!(name: Faker::Address.city, postal_code: Faker::Address.zip)
@@ -22,7 +23,7 @@ end
 end
 
 20.times do
-  gossip = Gossip.create!(title: Faker::HarryPotter.book, content: Faker::HarryPotter.quote, date: Faker::Date.backward(10), user_id: User.all.sample.id)
+  gossip = Gossip.create!(title: Faker::Cat.name, content: Faker::HarryPotter.quote, date: Faker::Date.backward(10), user_id: User.all.sample.id)
 end
 10.times do
   tag = Tag.create!(title: Faker::HarryPotter.spell, gossip_id: Gossip.all.sample.id)
@@ -30,4 +31,8 @@ end
 
 10.times do
   private_message = PrivateMessage.create(content: Faker::HarryPotter.quote, recipient_id: User.all.sample.id, sender_id: User.all.sample.id)
+end
+
+10.times do
+  comment = Comment.create!(content: Faker::HarryPotter.quote, gossip_id: Gossip.all.sample.id, user_id: User.all.sample.id)
 end

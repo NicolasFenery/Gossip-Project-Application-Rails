@@ -7,20 +7,32 @@
   <tbody>
     <tr>
       <th scope="row">Gossip</th>
-      <td><%= @gossip_card.title %></td>
+      <td><%= @gossip.title %></td>
     </tr>
     <tr>
       <th scope="row">Auteur</th>
-      <td><%= link_to "#{@gossip_card.user.first_name}", user_path(@gossip_card.user.id) %></td>
+      <td><%= link_to "#{@gossip.user.first_name}", user_path(@gossip.user.id) %></td>
     </tr>
     <tr>
       <th scope="row">Description</th>
-      <td><%= @gossip_card.content %></td>
+      <td><%= @gossip.content %></td>
     </tr>
-     <tr>
-      <th scope="row">Date</th>
-      <td><%= @gossip_card.date %> </li></td>
+
+    <tr>
+      <th scope="row">Ville</th>
+      <td><%= link_to "#{@gossip.user.city.name}", city_path(@gossip.user.city.id) %> </td>
     </tr>
+    
   </tbody>
 </table>
+  
+  <% if logged_in? && my_gossip? %>
+  <div class="form-group">
+        <button type="button" class="btn"><%= link_to "Modifier le Secret", edit_gossip_path, class: "btn
+        btn-md btn-primary" %></button>
+
+        <a href="<%= gossip_path(@gossip.id) %>" class="btn btn-danger" data-method="DELETE">Supprimer le secret</a>
+  </div>
+  <% end %>
+
 </div>

@@ -7,27 +7,27 @@
   <tbody>
     <tr>
       <th scope="row">Prénom</th>
-      <td><%= @user_profile.first_name %></td>
+      <td><%= @user.first_name %></td>
     </tr>
     <tr>
       <th scope="row">Nom</th>
-      <td><%= @user_profile.last_name %></td>
+      <td><%= @user.last_name %></td>
     </tr>
     <tr>
       <th scope="row">Description</th>
-      <td><%= @user_profile.description %></td>
+      <td><%= @user.description %></td>
     </tr>
      <tr>
       <th scope="row">Mail</th>
-      <td><%= @user_profile.email %></td>
+      <td><%= @user.email %></td>
     </tr>
      <tr>
       <th scope="row">Age</th>
-      <td><%= @user_profile.age %></td>
+      <td><%= @user.age %></td>
     </tr>
      <tr>
       <th scope="row">Ville</th>
-      <td><%= @user_profile.city.name %></td>
+      <td><%= link_to "#{@user.city.name}", city_path(@user.city.id) %></td><td>
     </tr>
   </tbody>
 </table>

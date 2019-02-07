@@ -1,0 +1,26 @@
+<div class="mx-auto text-center">
+      <div class="jumbotron">
+        <h1 class="display-4">Modifie le secret</h1>
+      </div>
+</div>
+
+<div class="container col-md-8 order-md-1">
+
+      <%= form_for @gossip do |f| %>
+
+      <div class="form-group">
+              <%= label_tag 'Nouveau Titre ✏️' %>
+              <%= f.text_field :title, class: "form-control"  %>
+      </div>
+
+      <div class="form-group">
+              <%= label_tag 'Nouveau Contenu 🔖' %>
+              <%= f.text_area :content, class: "form-control"  %>
+      </div>
+
+      <div class="form-group">
+            <%= f.submit "Modifier", class: "btn btn-lg btn-block btn-primary mt-3" %>
+      </div>
+</div>
+
+<% end %>
