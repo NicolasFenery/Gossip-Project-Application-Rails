@@ -1,4 +1,4 @@
-<div class="mx-auto py-3" style="width: 600px;">
+<div class="mx-auto mt-3 py-3" style="width: 600px;">
 <h1>Gossip</h1>
 </div>
 
@@ -23,9 +23,15 @@
       <td><%= link_to "#{@gossip.user.city.name}", city_path(@gossip.user.city.id) %> </td>
     </tr>
     
+    <tr>
+      <button type="button" class="btn mb-3 btn-md btn-info"><%= @gossip.likes.count %> 💙 </button>
+    </tr>
+
   </tbody>
 </table>
-  
+
+
+
   <% if logged_in? && my_gossip? %>
   <div class="form-group">
         <button type="button" class="btn"><%= link_to "Modifier le Secret", edit_gossip_path, class: "btn
@@ -34,5 +40,11 @@
         <a href="<%= gossip_path(@gossip.id) %>" class="btn btn-danger" data-method="DELETE">Supprimer le secret</a>
   </div>
   <% end %>
+</div>
 
+<%= render partial: 'comments/form' %>
+
+<div class="container col-md-8 order-md-1">
+<h3>Comments (<%= @gossip.comments.count %>)</h3>
+<div><%= render partial: 'gossips/comment', collection: @gossip.comments.reverse %></div>
 </div>

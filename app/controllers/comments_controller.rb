@@ -4,10 +4,12 @@ class CommentsController < ApplicationController
   end
 
   def create 
-     @comment = Comment.create(content: params[:content], user_id: User.all.sample.id)
+     @comment = Comment.create(comments_params)
+     @comment.user = current_user
+     @commebt.gossip_id = params[:gossip_id]
 
     if @comment.save
-      redirect_to gossip_path
+      redirect_to gossip_path(@comment.gossip)
     else
       render 'show'
     end
@@ -15,5 +17,11 @@ class CommentsController < ApplicationController
 
   def show
     @comment = Comment.find(params[:id])
+  end
+
+  private
+
+  def comments_params
+    params.require(:comment).permit(:content)
   end
 end

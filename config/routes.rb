@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
 
-  get 'city/show'
-  resources :gossips
+  resources :gossips do
+    resources :comments
+  end
+  
   resources :users
   resources :cities
-  resources :comments
+  resources :likes
   resources :sessions, only: [:new, :create, :destroy]
 
   root 'home#index'

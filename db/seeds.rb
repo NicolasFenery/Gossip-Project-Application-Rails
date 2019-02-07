@@ -13,13 +13,14 @@ Tag.destroy_all
 Gossip.destroy_all
 PrivateMessage.destroy_all
 Comment.destroy_all
+Like.destroy_all
 
 10.times do
   city = City.create!(name: Faker::Address.city, postal_code: Faker::Address.zip)
 end
 
 10.times do
-  user = User.create!(first_name: Faker::HarryPotter.character, last_name: Faker::HarryPotter.character, description: Faker::MichaelScott.quote, email: Faker::Internet.email, age: Faker::Number.number(2), city_id: City.all.sample.id)
+  user = User.create!(first_name: Faker::HarryPotter.character, last_name: Faker::HarryPotter.character, description: Faker::MichaelScott.quote, email: Faker::Internet.email, age: Faker::Number.number(2), city_id: City.all.sample.id, password: Faker::Number.number(7))
 end
 
 20.times do
@@ -35,4 +36,8 @@ end
 
 10.times do
   comment = Comment.create!(content: Faker::HarryPotter.quote, gossip_id: Gossip.all.sample.id, user_id: User.all.sample.id)
+end
+
+10.times do
+  like = Like.create!(user_id: User.all.sample.id, gossip_id: Gossip.all.sample.id)
 end

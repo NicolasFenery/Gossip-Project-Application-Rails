@@ -1,0 +1,11 @@
+<div class="container col-md-8 order-md-1">
+<h3>Commentaire ✏️</h3>
+<%= form_for [ @gossip, @comment ] do |f| %>
+ <p>
+   <%= f.text_area :content, class: "form-control" %>
+ </p>
+ <p>
+   <%= f.submit 'Submit',  class: "btn btn-lg btn-block btn-primary mt-3" %>
+ </p>
+<% end %>
+</div>

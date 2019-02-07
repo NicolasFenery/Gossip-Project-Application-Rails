@@ -19,6 +19,7 @@
 			    <h6 class="card-subtitle mb-5 text-muted"><%= gossip.user.first_name %></h6>
 			    <button type="button" class="btn"><%= link_to "Voir le Secret", gossip_path(gossip.id), class: "btn
 			    btn-md btn-primary" %></button>
+				<button type="button" class="btn btn-md btn-info"><%= gossip.likes.count %> 💙 </button>
 			  </div>
 			</div>
 		</div>

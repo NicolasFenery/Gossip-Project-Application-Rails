@@ -8,6 +8,8 @@ class GossipsController < ApplicationController
 
   def show
     @gossip = Gossip.find(params[:id])
+    @comment = @gossip.comments.new
+    @comment.gossip_id = @gossip.id
   end
 
   def create
