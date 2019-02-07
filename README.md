@@ -1,7 +1,7 @@
 # Gossip Project
 App The Gossip Project
 
-## Regarde ensuite les pages du site en commençant par la page d'accueil :
+## Commence ici :
 https://gossipswagance.herokuapp.com
 
 ## Réalisé par :fire:
