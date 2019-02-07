@@ -6,7 +6,7 @@ class CommentsController < ApplicationController
   def create 
      @comment = Comment.create(comments_params)
      @comment.user = current_user
-     @commebt.gossip_id = params[:gossip_id]
+     @comment.gossip_id = params[:gossip_id]
 
     if @comment.save
       redirect_to gossip_path(@comment.gossip)
